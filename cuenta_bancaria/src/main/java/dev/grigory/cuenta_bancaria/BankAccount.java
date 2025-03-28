@@ -20,8 +20,10 @@ public class BankAccount {
         return depositCount;
     }
     public void withdraw(float amount) {
+        if (amount <= balance) {
         balance -= amount;
         withdrawalCount++;
+        }
     }
     public int getWithdrawalCount() {
         return withdrawalCount;
