@@ -36,4 +36,11 @@ public class BankAccountTest {
         account.withdraw(30.0f);
         assertEquals(2, account.getWithdrawalCount());
     }
+    @Test
+    public void testCannotWithdrawMoreThanBalance() {
+        BankAccount account = new BankAccount(100.0f, 5.0f);
+        account.withdraw(150.0f);
+        assertEquals(100.0f, account.getBalance());
+        assertEquals(0, account.getWithdrawalCount());
+    }
 }
