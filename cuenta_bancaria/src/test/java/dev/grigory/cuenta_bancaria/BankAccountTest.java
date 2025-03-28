@@ -59,13 +59,13 @@ public class BankAccountTest {
     @Test
     public void testPrintReturnsAccountState() {
         BankAccount account = new BankAccount(1000.0f, 5.0f);
-        account.setMonthlyFee(20.0f);
+        account.setMonthlyFee(25.0f);
         account.deposit(200.0f);
         account.withdraw(100.0f);
         String output = account.print();
         assertTrue(output.contains("Balance: 1100.0"));
         assertTrue(output.contains("Deposits: 1"));
         assertTrue(output.contains("Withdrawals: 1"));
-        assertTrue(output.contains("Monthly Fee: 25.0"));
+        assertTrue(output.contains("Monthly fee: 25.0"));
     }
 }
