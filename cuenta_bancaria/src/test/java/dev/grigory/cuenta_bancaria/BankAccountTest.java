@@ -49,4 +49,11 @@ public class BankAccountTest {
         account.calculateMonthlyInterest();
         assertEquals(1212.0f, account.getBalance(), 0.001);
     }
+    @Test
+    public void testMonthlyStatementAppliesFeeAndInterest() {
+        BankAccount account = new BankAccount(1000.0f, 12.0f);
+        account.withdraw(50.0f);
+        account.monthlyStatement();
+        assertEquals(959.5f, account.getBalance(), 0.001);
+    }
 }
