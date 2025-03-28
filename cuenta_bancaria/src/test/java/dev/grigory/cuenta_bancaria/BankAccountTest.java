@@ -29,4 +29,11 @@ public class BankAccountTest {
         account.withdraw(50.0f);
         assertEquals(150.0f, account.getBalance());
     }
+    @Test
+    public void testWithdrawIncreasesWithdrawalCount() {
+        BankAccount account = new BankAccount(300.0f, 5.0f);
+        account.withdraw(50.0f);
+        account.withdraw(30.0f);
+        assertEquals(2, account.getWithdrawalCount());
+    }
 }
