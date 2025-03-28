@@ -66,6 +66,6 @@ public class BankAccountTest {
         assertTrue(output.contains("Balance: 1100.0"));
         assertTrue(output.contains("Deposits: 1"));
         assertTrue(output.contains("Withdrawals: 1"));
-        assertTrue(output.contains("Monthly fee: 25.0"));
+        assertTrue(output.contains("Monthly Fee: 25.0"));
     }
 }

@@ -42,4 +42,10 @@ public class BankAccount {
         balance -= monthlyFee;
         calculateMonthlyInterest();
     }
+    public String print() {
+        return   "Balance: " + balance +
+                 "\nDeposits: " + depositCount +
+                 "\nWithdrawals: " + withdrawalCount +
+                 "\nMonthly fee: " + monthlyFee;
+    }
 }
