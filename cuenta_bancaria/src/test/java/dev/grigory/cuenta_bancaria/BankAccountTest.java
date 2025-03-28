@@ -23,4 +23,10 @@ public class BankAccountTest {
         account.deposit(30.0f);
         assertEquals(2, account.getDepositCount());
     }
+    @Test
+    public void testWithdrawalDecreasesBalance() {
+        BankAccount account = new BankAccount(200.0f, 5.0f);
+        account.withdraw(50.0f);
+        assertEquals(150.0f, account.getBalance());
+    }
 }
