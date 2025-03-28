@@ -16,4 +16,10 @@ public class BankAccountTest {
         account.deposit(50.0f);
         assertEquals(150.0f, account.getBalance());
     }
+    @Test
+    public void testDepositIncreasesDepositCount() {
+        account.deposit(20.0f);
+        account.deposit(30.0f);
+        assertEquals(2, account.getDepositCount());
+    }
 }
