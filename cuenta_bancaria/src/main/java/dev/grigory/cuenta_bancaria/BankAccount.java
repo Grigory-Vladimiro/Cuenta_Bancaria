@@ -9,4 +9,7 @@ public class BankAccount {
     public float getBalance() {
         return balance;
     }
+    public void deposit(float amount) {
+        balance += amount;
+    }
 }
