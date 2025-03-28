@@ -13,6 +13,7 @@ public class BankAccount {
     }
     public void deposit(float amount) {
         balance += amount;
+        depositCount++;
     }
     public int getDepositCount() {
         return depositCount;
