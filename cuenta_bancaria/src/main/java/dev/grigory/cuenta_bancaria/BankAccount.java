@@ -18,4 +18,7 @@ public class BankAccount {
     public int getDepositCount() {
         return depositCount;
     }
+    public void withdraw(float amount) {
+        balance -= amount;
+    }
 }
