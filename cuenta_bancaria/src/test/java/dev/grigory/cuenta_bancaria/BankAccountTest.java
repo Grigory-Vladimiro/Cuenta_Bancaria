@@ -43,4 +43,10 @@ public class BankAccountTest {
         assertEquals(100.0f, account.getBalance());
         assertEquals(0, account.getWithdrawalCount());
     }
+    @Test
+    public void testCalculateMonthlyInterestUpdatesBalance() { 
+        BankAccount account = new BankAccount(1200.0f, 12.0f);
+        account.calculateMonthlyInterest();
+        assertEquals(1212.0f, account.getBalance(), 0.001);
+    }
 }
