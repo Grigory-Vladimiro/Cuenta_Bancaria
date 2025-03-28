@@ -6,6 +6,7 @@ public class BankAccount {
     private int depositCount = 0;
     public int withdrawalCount = 0;
     private float annualInterestRate;
+    private float monthlyFee = 0.0f;
 
     public BankAccount(float balance, float annualInterestRate) {
         this.balance = balance;
@@ -33,5 +34,12 @@ public class BankAccount {
     public void calculateMonthlyInterest() {
         float monthlyInterest = annualInterestRate / 12 / 100;
         balance += balance * monthlyInterest;
+    }
+    public void setMonthlyFee(float monthlyFee) {
+        this.monthlyFee = monthlyFee;
+    }
+    public void monthlyStatement() {
+        balance -= monthlyFee;
+        calculateMonthlyInterest();
     }
 }
