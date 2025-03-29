@@ -22,4 +22,11 @@ public class SavingAccountTest {
         assertEquals(9000.0f, account.getBalance());
         assertEquals(0, account.getDepositCount());
     }
+    @Test
+    public void testCannotWithdrawWhenInactive() {
+        SavingsAccount account = new SavingsAccount(9000.0f, 5.0f);
+        account.withdraw(100.0f);
+        assertEquals(9000.0f, account.getBalance());
+        assertEquals(0, account.getWithdrawalCount());
+    }
 }
