@@ -48,4 +48,7 @@ public class BankAccount {
                  "\nWithdrawals: " + withdrawalCount +
                  "\nMonthly fee: " + monthlyFee;
     }
+    public float getMonthlyFee() {
+        return monthlyFee;
+    }
 }
