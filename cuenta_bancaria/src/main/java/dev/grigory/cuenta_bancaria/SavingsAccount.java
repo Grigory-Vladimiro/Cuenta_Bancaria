@@ -28,5 +28,6 @@ public class SavingsAccount extends BankAccount {
         float extraFee = extraWithdrawals * 1000.0f;
         setMonthlyFee(getMonthlyFee() + extraFee);
         super.monthlyStatement();
+        this.active = getBalance() >= 10000.0f;
     }
 }
