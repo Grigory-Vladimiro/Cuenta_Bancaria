@@ -40,4 +40,11 @@ public class SavingAccountTest {
         account.monthlyStatement();
         assertEquals(20000.0f - 5000.0f - 1000.0f, account.getBalance(), 0.001);
     }
+    @Test
+    public void testMonthlyStatementUpdatesActiveStatus() {
+        SavingsAccount account = new SavingsAccount(12000.0f, 0.0f);
+        account.withdraw(3000.0f);
+        account.monthlyStatement();
+        assertFalse(account.isActive());
+    }
 }
