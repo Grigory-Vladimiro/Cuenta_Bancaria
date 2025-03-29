@@ -29,4 +29,15 @@ public class SavingAccountTest {
         assertEquals(9000.0f, account.getBalance());
         assertEquals(0, account.getWithdrawalCount());
     }
+    @Test
+    public void testMonthlyStatementAddsExtraWithdrawalFees() {
+        SavingsAccount account = new SavingsAccount(20000.0f, 0.0f);
+        account.withdraw(1000.0f);
+        account.withdraw(1000.0f);
+        account.withdraw(1000.0f);
+        account.withdraw(1000.0f);
+        account.withdraw(1000.0f);
+        account.monthlyStatement();
+        assertEquals(20000.0f - 5000.0f - 1000.0f, account.getBalance(), 0.001);
+    }
 }
