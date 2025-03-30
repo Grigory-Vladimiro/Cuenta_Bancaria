@@ -34,4 +34,12 @@ public class CheckingAccount extends BankAccount {
             }
             depositCount++;
     }
+    @Override
+    public String print() {
+        int totalTransactions = getDepositCount() + getWithdrawalCount();
+        return  "Balance: " + getBalance() +
+                "\nMonthly fee: " + getMonthlyFee() +
+                "\nTotal transactions: " + totalTransactions +
+                "\nOverdraft: " + overdraft;
+    }
 }
