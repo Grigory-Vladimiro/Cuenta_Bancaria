@@ -47,4 +47,15 @@ public class SavingAccountTest {
         account.monthlyStatement();
         assertFalse(account.isActive());
     }
+    @Test
+    public void testPrintIncludesSavingsAccountData() {
+        SavingsAccount account = new SavingsAccount(10000.0f, 5.0f);
+        account.setMonthlyFee(50.0f);
+        account.deposit(500.0f);
+        account.withdraw(200.0f);
+        String output = account.print();
+        assertTrue(output.contains("Balance: 10300.0"));
+        assertTrue(output.contains("Monthly fee: 50.0"));
+        assertTrue(output.contains("Total transactions: 2"));
+    }
 }
