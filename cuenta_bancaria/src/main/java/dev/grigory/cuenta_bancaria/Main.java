@@ -21,5 +21,14 @@ public class Main {
         savings.setMonthlyFee(30.0f);
         savings.monthlyStatement();
         System.out.println(savings.print());
+
+        System.out.println("\n=== CHECKING ACCOUNT ===");
+        CheckingAccount checking = new CheckingAccount(1000.0f, 5.0f);
+        checking.withdraw(1500.0f);
+        checking.deposit(300.0f);
+        checking.deposit(300.0f);
+        checking.setMonthlyFee(25.0f);
+        checking.monthlyStatement();
+        System.out.println(checking.print());
     }
 }
