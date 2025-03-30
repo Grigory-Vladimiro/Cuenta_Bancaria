@@ -42,4 +42,21 @@ public class LoginServiceTest {
         System.setIn(originalIn);
         }
     }
+    @Test
+        public void testInteractiveLoginFailsAfterThreeAttempts() {
+        String simulatedInput = String.join("\n",
+        "wrong1", "wrongpass",
+        "wrong2", "wrongpass",
+        "wrong3", "wrongpass"
+        ) + "\n";
+        InputStream originalIn = System.in;
+        try {
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        LoginService loginService = new LoginService();
+        boolean result = loginService.login();
+        assertFalse(result);
+        } finally {
+        System.setIn(originalIn);
+        }
+    }
 }
