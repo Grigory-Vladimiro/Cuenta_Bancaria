@@ -22,4 +22,8 @@ public class LoginServiceTest {
         boolean result = loginService.login("admin", "wrongPass");
         assertFalse(result);
     }
+    @Test
+    public void testInteractiveLoginWithScanner() {
+        LoginService loginService = new LoginService();
+    }
 }
