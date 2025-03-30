@@ -2,6 +2,10 @@ package dev.grigory.cuenta_bancaria;
 
 public class Main {
     public static void main(String[] args) {
+        LoginService loginService = new LoginService();
+        if (!loginService.login()) {
+            return;
+        }
         System.out.println("=== BANK ACCOUNT ===");
         BankAccount basic = new BankAccount(1000.0f, 12.0f);
         basic.deposit(500.0f);
