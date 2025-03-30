@@ -9,5 +9,17 @@ public class Main {
         basic.setMonthlyFee(50.0f);
         basic.monthlyStatement();
         System.out.println(basic.print());
+
+        System.out.println("\n=== SAVINGS ACCOUNT ===");
+        SavingsAccount savings = new SavingsAccount(15000.0f, 6.0f);
+        savings.deposit(1000.0f);
+        savings.withdraw(2000.0f);
+        savings.withdraw(2000.0f);
+        savings.withdraw(2000.0f);
+        savings.withdraw(2000.0f);
+        savings.withdraw(2000.0f); 
+        savings.setMonthlyFee(30.0f);
+        savings.monthlyStatement();
+        System.out.println(savings.print());
     }
 }
