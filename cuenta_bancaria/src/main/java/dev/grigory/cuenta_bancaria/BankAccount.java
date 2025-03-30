@@ -2,9 +2,9 @@ package dev.grigory.cuenta_bancaria;
 
 public class BankAccount {
 
-    private float balance;
+    protected float balance;
     private int depositCount = 0;
-    public int withdrawalCount = 0;
+    protected int withdrawalCount = 0;
     private float annualInterestRate;
     private float monthlyFee = 0.0f;
 
