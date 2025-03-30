@@ -30,4 +30,11 @@ public class SavingsAccount extends BankAccount {
         super.monthlyStatement();
         this.active = getBalance() >= 10000.0f;
     }
+    @Override
+    public String print() {
+        int totalTransactions = getDepositCount() + getWithdrawalCount();
+        return  "Balance: " + getBalance() +
+                "\nMonthly fee: " + getMonthlyFee() +
+                "\nTotal transactions: " + totalTransactions;
+    }
 }
