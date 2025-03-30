@@ -19,4 +19,19 @@ public class CheckingAccount extends BankAccount {
             withdrawalCount++;
         }
     }
+    @Override
+    public void deposit(float amount) {
+        if (overdraft > 0) {
+        if (amount >= overdraft) {
+            amount -= overdraft;
+            overdraft = 0.0f;
+            balance += amount;
+        } else {
+            overdraft -= amount;
+        }
+        } else {
+            balance += amount;
+            }
+            depositCount++;
+    }
 }
