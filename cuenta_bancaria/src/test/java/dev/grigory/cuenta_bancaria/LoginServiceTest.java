@@ -10,4 +10,10 @@ public class LoginServiceTest {
         boolean result = loginService.login("admin", "1234");
         assertTrue(result);
     }
+    @Test
+    public void testLoginFailsWithWrongUsername() {
+        LoginService loginService = new LoginService();
+        boolean result = loginService.login("wrongUser", "1234");
+        assertFalse(result);
+    }
 }
