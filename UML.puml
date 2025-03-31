@@ -1,0 +1,61 @@
+@startuml Cuenta Bancaria
+skinparam classAttributeIconSize 0
+
+' ---------------- Base class ----------------
+class BankAccount {
+    - balance: float
+    - depositCount: int
+    - withdrawalCount: int
+    - annualInterestRate: float
+    - monthlyFee: float
+
+    + BankAccount(balance: float, annualInterestRate: float)
+    + deposit(amount: float): void
+    + withdraw(amount: float): void
+    + calculateMonthlyInterest(): void
+    + monthlyStatement(): void
+    + print(): String
+    + setMonthlyFee(fee: float): void
+    + getMonthlyFee(): float
+    + getBalance(): float
+    + getDepositCount(): int
+    + getWithdrawalCount(): int
+}
+
+' ---------------- SavingsAccount ----------------
+class SavingsAccount {
+    - active: boolean
+
+    + SavingsAccount(balance: float, annualInterestRate: float)
+    + isActive(): boolean
+    + deposit(amount: float): void
+    + withdraw(amount: float): void
+    + monthlyStatement(): void
+    + print(): String
+}
+
+SavingsAccount --|> BankAccount
+
+' ---------------- CheckingAccount ----------------
+class CheckingAccount {
+    - overdraft: float
+
+    + CheckingAccount(balance: float, annualInterestRate: float)
+    + getOverdraft(): float
+    + deposit(amount: float): void
+    + withdraw(amount: float): void
+    + print(): String
+}
+
+CheckingAccount --|> BankAccount
+
+' ---------------- LoginService ----------------
+class LoginService {
+    - USERNAME: String
+    - PASSWORD: String
+
+    + login(username: String, password: String): boolean
+    + login(): boolean
+}
+
+@enduml
